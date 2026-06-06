@@ -1,0 +1,112 @@
+[
+  {
+    "activity_id": "SG-A01",
+    "destination": "Singapore",
+    "name": "Chinatown and Maxwell Food Centre walk",
+    "area": "Chinatown",
+    "duration_hours": 3,
+    "best_time": "Evening",
+    "cost_inr": 1600,
+    "tags": [
+      "food",
+      "culture",
+      "walkable",
+      "low-cost"
+    ],
+    "notes": "Works well on arrival day if the flight lands before evening."
+  },
+  {
+    "activity_id": "SG-A02",
+    "destination": "Singapore",
+    "name": "Gardens by the Bay + Marina Bay walk",
+    "area": "Marina Bay",
+    "duration_hours": 5,
+    "best_time": "Afternoon to night",
+    "cost_inr": 2800,
+    "tags": [
+      "views",
+      "landmark",
+      "nature",
+      "photo"
+    ],
+    "notes": "Pairs well with sunset and the evening light show."
+  },
+  {
+    "activity_id": "SG-A03",
+    "destination": "Singapore",
+    "name": "National Gallery and Civic District",
+    "area": "Civic District",
+    "duration_hours": 4,
+    "best_time": "Morning",
+    "cost_inr": 1200,
+    "tags": [
+      "culture",
+      "museum",
+      "history",
+      "indoor"
+    ],
+    "notes": "Good choice for culture-focused travellers."
+  },
+  {
+    "activity_id": "SG-A04",
+    "destination": "Singapore",
+    "name": "Kampong Glam food and heritage trail",
+    "area": "Bugis",
+    "duration_hours": 3,
+    "best_time": "Late afternoon",
+    "cost_inr": 1500,
+    "tags": [
+      "food",
+      "culture",
+      "walkable",
+      "low-cost"
+    ],
+    "notes": "Fits well with a Bugis hotel base."
+  },
+  {
+    "activity_id": "SG-A05",
+    "destination": "Singapore",
+    "name": "Sentosa half-day: beaches and cable car",
+    "area": "Sentosa",
+    "duration_hours": 6,
+    "best_time": "Morning to afternoon",
+    "cost_inr": 5200,
+    "tags": [
+      "leisure",
+      "views",
+      "family",
+      "premium"
+    ],
+    "notes": "Good optional add-on but can stretch the budget."
+  },
+  {
+    "activity_id": "SG-A06",
+    "destination": "Singapore",
+    "name": "Hawker centre tasting route",
+    "area": "Multiple",
+    "duration_hours": 4,
+    "best_time": "Lunch or dinner",
+    "cost_inr": 2200,
+    "tags": [
+      "food",
+      "local",
+      "low-cost"
+    ],
+    "notes": "Strong fit for food-focused travellers."
+  },
+  {
+    "activity_id": "DXB-A01",
+    "destination": "Dubai",
+    "name": "Old Dubai souks and creek abra ride",
+    "area": "Deira/Bur Dubai",
+    "duration_hours": 4,
+    "best_time": "Evening",
+    "cost_inr": 1800,
+    "tags": [
+      "culture",
+      "food",
+      "low-cost"
+    ],
+    "notes": "Good low-cost culture block for Dubai."
+  }
+]

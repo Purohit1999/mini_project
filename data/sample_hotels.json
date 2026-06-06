@@ -1,0 +1,97 @@
+[
+  {
+    "hotel_id": "SG-H01",
+    "destination": "Singapore",
+    "name": "Harbour View City Hotel",
+    "area": "Tanjong Pagar",
+    "price_per_night_inr": 11200,
+    "rating": 4.3,
+    "amenities": [
+      "breakfast",
+      "metro nearby",
+      "family rooms"
+    ],
+    "tags": [
+      "mid-budget",
+      "city",
+      "food",
+      "metro"
+    ],
+    "notes": "Good access to Chinatown, Maxwell Food Centre, and MRT."
+  },
+  {
+    "hotel_id": "SG-H02",
+    "destination": "Singapore",
+    "name": "Orchard Urban Stay",
+    "area": "Orchard",
+    "price_per_night_inr": 15600,
+    "rating": 4.5,
+    "amenities": [
+      "breakfast",
+      "pool",
+      "shopping district"
+    ],
+    "tags": [
+      "premium",
+      "shopping",
+      "central"
+    ],
+    "notes": "Convenient but may exceed a strict mid-budget hotel cap."
+  },
+  {
+    "hotel_id": "SG-H03",
+    "destination": "Singapore",
+    "name": "Bugis Heritage Inn",
+    "area": "Bugis",
+    "price_per_night_inr": 8900,
+    "rating": 4.1,
+    "amenities": [
+      "metro nearby",
+      "self check-in"
+    ],
+    "tags": [
+      "budget",
+      "culture",
+      "metro",
+      "walkable"
+    ],
+    "notes": "Strong budget option near Arab Street and Kampong Glam."
+  },
+  {
+    "hotel_id": "SG-H04",
+    "destination": "Singapore",
+    "name": "Marina Bay Skyline Hotel",
+    "area": "Marina Bay",
+    "price_per_night_inr": 23800,
+    "rating": 4.7,
+    "amenities": [
+      "skyline view",
+      "pool",
+      "breakfast"
+    ],
+    "tags": [
+      "views",
+      "premium",
+      "landmark"
+    ],
+    "notes": "Excellent views, but likely outside a mid-budget plan."
+  },
+  {
+    "hotel_id": "DXB-H01",
+    "destination": "Dubai",
+    "name": "Creekside Business Hotel",
+    "area": "Deira",
+    "price_per_night_inr": 7900,
+    "rating": 4.0,
+    "amenities": [
+      "metro nearby",
+      "breakfast"
+    ],
+    "tags": [
+      "budget",
+      "metro",
+      "business"
+    ],
+    "notes": "Affordable and convenient for old Dubai."
+  }
+]

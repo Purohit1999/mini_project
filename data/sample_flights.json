@@ -1,0 +1,111 @@
+[
+  {
+    "flight_id": "SQ-421",
+    "origin": "Mumbai",
+    "destination": "Singapore",
+    "airline": "Singapore Airlines",
+    "depart_time": "11:45",
+    "arrive_time": "19:50",
+    "duration_hours": 5.6,
+    "stops": 0,
+    "price_inr": 28500,
+    "baggage": "25 kg checked + 7 kg cabin",
+    "tags": [
+      "direct",
+      "daytime",
+      "premium",
+      "reliable"
+    ],
+    "notes": "Comfortable direct daytime option; arrives before dinner."
+  },
+  {
+    "flight_id": "AI-342",
+    "origin": "Mumbai",
+    "destination": "Singapore",
+    "airline": "Air India",
+    "depart_time": "23:15",
+    "arrive_time": "07:20",
+    "duration_hours": 5.6,
+    "stops": 0,
+    "price_inr": 23600,
+    "baggage": "25 kg checked + 7 kg cabin",
+    "tags": [
+      "direct",
+      "red-eye",
+      "budget"
+    ],
+    "notes": "Cheaper direct flight but violates avoid-red-eye preference."
+  },
+  {
+    "flight_id": "6E-101",
+    "origin": "Mumbai",
+    "destination": "Singapore",
+    "airline": "IndiGo",
+    "depart_time": "06:10",
+    "arrive_time": "14:05",
+    "duration_hours": 5.4,
+    "stops": 0,
+    "price_inr": 21900,
+    "baggage": "15 kg checked + 7 kg cabin",
+    "tags": [
+      "direct",
+      "early-morning",
+      "budget"
+    ],
+    "notes": "Budget-friendly direct flight; early start may be tiring."
+  },
+  {
+    "flight_id": "UK-878",
+    "origin": "Mumbai",
+    "destination": "Singapore",
+    "airline": "Vistara",
+    "depart_time": "09:20",
+    "arrive_time": "20:35",
+    "duration_hours": 8.8,
+    "stops": 1,
+    "price_inr": 24800,
+    "baggage": "20 kg checked + 7 kg cabin",
+    "tags": [
+      "one-stop",
+      "daytime",
+      "mid-budget"
+    ],
+    "notes": "One-stop daytime route; slower than direct but avoids red-eye."
+  },
+  {
+    "flight_id": "SQ-403",
+    "origin": "Delhi",
+    "destination": "Singapore",
+    "airline": "Singapore Airlines",
+    "depart_time": "21:55",
+    "arrive_time": "06:10",
+    "duration_hours": 5.8,
+    "stops": 0,
+    "price_inr": 32700,
+    "baggage": "25 kg checked + 7 kg cabin",
+    "tags": [
+      "direct",
+      "red-eye",
+      "premium"
+    ],
+    "notes": "Strong airline choice but red-eye arrival."
+  },
+  {
+    "flight_id": "EK-503",
+    "origin": "Mumbai",
+    "destination": "Dubai",
+    "airline": "Emirates",
+    "depart_time": "19:20",
+    "arrive_time": "21:15",
+    "duration_hours": 3.4,
+    "stops": 0,
+    "price_inr": 21500,
+    "baggage": "25 kg checked + 7 kg cabin",
+    "tags": [
+      "direct",
+      "evening",
+      "premium"
+    ],
+    "notes": "Direct evening route to Dubai."
+  }
+]

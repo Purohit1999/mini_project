@@ -1,0 +1,4 @@
+.env
+outputs/trip_plan_*.md
+__pycache__/
+.ipynb_checkpoints/
