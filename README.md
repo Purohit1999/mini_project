@@ -93,6 +93,14 @@ Run cells from top to bottom. The notebook starts in offline mode unless `.env` 
 python main.py
 ```
 
+### Streamlit web UI
+
+```bash
+streamlit run streamlit_app.py
+```
+
+The Streamlit page uses the same planner logic and defaults to offline mode for a safe demo.
+
 Print the complete manager-worker trace:
 
 ```bash
@@ -134,6 +142,8 @@ python main.py --demo-mode live
 - `agents/critic.py` — Reflexion-style critic
 - `tools/travel_tools.py` — local deterministic search tools over sample data
 - `utils.py` — environment loading, OpenAI wrapper, JSON helpers
+- `langgraph_flow.py` — LangGraph orchestration for the planner flow
+- `prompts/langgraph_prompts.py` — LangChain prompt templates used by the graph nodes
 - `data/sample_flights.json` — simulated flight inventory
 - `data/sample_hotels.json` — simulated hotel inventory
 - `data/sample_activities.json` — simulated activity inventory

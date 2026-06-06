@@ -6,9 +6,8 @@ import argparse
 import os
 from typing import Any, Dict
 
-from agents.manager import TravelPlannerManager
-from tools.travel_tools import load_travel_data
-from utils import LLMClient, load_project_env, pretty_json, save_trip_plan, validate_trip_request
+from langgraph_flow import run_langgraph_pipeline
+from utils import pretty_json, save_trip_plan, validate_trip_request
 
 
 DEFAULT_REQUEST = (
@@ -36,34 +35,15 @@ def build_parser() -> argparse.ArgumentParser:
     return parser
 
 
+def resolve_request_text(user_request: str) -> str:
+    """Return the provided request, or fall back to the default demo prompt."""
+    candidate = (user_request or "").strip()
+    return candidate or DEFAULT_REQUEST
+
+
 def run_pipeline(user_request: str, demo_mode: str | None = None) -> Dict[str, Any]:
-    """Run the travel-planner pipeline.
-
-    Args:
-        user_request: Natural-language request.
-        demo_mode: Optional override for DEMO_MODE.
-
-    Returns:
-        Full pipeline result.
-    """
-    settings = load_project_env()
-    if demo_mode:
-        os.environ["DEMO_MODE"] = demo_mode
-        settings["demo_mode"] = demo_mode
-
-    try:
-        temperature = float(settings["temperature"])
-    except ValueError:
-        temperature = 0.2
-
-    llm = LLMClient(
-        demo_mode=settings["demo_mode"],
-        model_name=settings["model_name"],
-        temperature=temperature,
-    )
-    travel_data = load_travel_data()
-    manager = TravelPlannerManager(llm=llm, travel_data=travel_data)
-    return manager.run(user_request)
+    """Run the travel-planner pipeline via the LangGraph orchestration layer."""
+    return run_langgraph_pipeline(user_request, demo_mode=demo_mode)
 
 
 def main() -> None:
@@ -71,14 +51,15 @@ def main() -> None:
     parser = build_parser()
     args = parser.parse_args()
 
-    validation = validate_trip_request(args.request)
+    request_text = resolve_request_text(args.request)
+    validation = validate_trip_request(request_text)
     if not validation["valid"]:
         print("Trip request validation failed:")
         for issue in validation["errors"]:
             print(f"- {issue}")
         raise SystemExit(1)
 
-    result = run_pipeline(args.request, args.demo_mode)
+    result = run_pipeline(request_text, args.demo_mode)
     output_path = save_trip_plan(result)
 
     print("\n=== Final Travel Plan ===")
