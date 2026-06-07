@@ -10,7 +10,13 @@ jupyter==1.1.1
 # LangChain / LangGraph orchestration
 langchain==0.3.26
 langgraph==0.2.64
-langchain-openai==0.3.20
+# langchain-openai==0.3.20
 
 # Web UI
 streamlit==1.40.2
+
+# FAQ RAG / retrieval
+pypdf==6.13.0
+faiss-cpu==1.14.2
+PyMuPDF==1.27.2.3
+easyocr==1.7.2

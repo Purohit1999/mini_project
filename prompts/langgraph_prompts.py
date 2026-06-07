@@ -29,3 +29,7 @@ FINAL_PROMPT = PromptTemplate.from_template(
 EXPORT_PROMPT = PromptTemplate.from_template(
     "Export the final itinerary to Markdown in the outputs directory for: {request_text}"
 )
+
+FAQ_ANSWER_PROMPT = PromptTemplate.from_template(
+    "Answer only from the Expedia FAQ document context. If the FAQ context is insufficient, say so clearly and do not invent policies, prices, or booking rules. Keep the answer concise and user-friendly: {question}"
+)

@@ -7,6 +7,7 @@ import os
 from typing import Any, Dict
 
 from langgraph_flow import run_langgraph_pipeline
+from tools.faq_rag import answer_faq_question
 from utils import pretty_json, save_trip_plan, validate_trip_request
 
 
@@ -32,6 +33,7 @@ def build_parser() -> argparse.ArgumentParser:
         help="offline uses deterministic logic; live uses OpenAI calls.",
     )
     parser.add_argument("--show-trace", action="store_true", help="Print the full state trace.")
+    parser.add_argument("--faq", help="Ask a question from the Expedia FAQ PDF.")
     return parser
 
 
@@ -50,6 +52,16 @@ def main() -> None:
     """Run the command-line demo."""
     parser = build_parser()
     args = parser.parse_args()
+
+    if args.faq:
+        result = answer_faq_question(args.faq)
+        print("\n=== Expedia FAQ Answer ===")
+        print(result["answer"])
+        if result.get("sources"):
+            print("\nSources:")
+            for source in result["sources"]:
+                print(f"- page {source['page']} · {source['source']} · chunk {source['chunk_id']}")
+        return
 
     request_text = resolve_request_text(args.request)
     validation = validate_trip_request(request_text)

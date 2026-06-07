@@ -7,6 +7,7 @@ from typing import Any, Dict
 import streamlit as st
 
 from main import run_pipeline
+from tools.faq_rag import answer_faq_question
 from utils import pretty_json, save_trip_plan, validate_trip_request
 
 
@@ -268,6 +269,26 @@ def main() -> None:
         if show_trace:
             st.markdown("<div class='glass-card'><h3 style='margin-top:0'>Full Trace</h3></div>", unsafe_allow_html=True)
             st.code(pretty_json(result), language="json")
+
+    st.markdown("<div class='glass-card'><h2 style='margin-top:0; font-size:1.1rem;'>Ask Expedia FAQ</h2><p class='tiny-note' style='margin-bottom:0;'>Search the Expedia FAQ PDF using hybrid dense + sparse retrieval with offline-safe local embeddings.</p></div>", unsafe_allow_html=True)
+    faq_question = st.text_input("Expedia FAQ question", value="", placeholder="Example: What is Expedia's cancellation policy?")
+    faq_clicked = st.button("Search FAQ", use_container_width=True)
+
+    if faq_clicked and faq_question.strip():
+        with st.spinner("Searching the FAQ document..."):
+            faq_result = answer_faq_question(faq_question)
+
+        st.info(faq_result["answer"])
+        st.caption(f"Confidence: {faq_result.get('confidence', 'low')} · {faq_result.get('retrieval_note', 'Hybrid retrieval used local context.')}")
+        if faq_result.get("sources"):
+            st.write("Source references:")
+            for source in faq_result["sources"]:
+                st.write(f"- page {source['page']} · {source['source']} · chunk {source['chunk_id']}")
+        if faq_result.get("retrieved_chunks"):
+            with st.expander("Retrieved FAQ snippets"):
+                for chunk in faq_result["retrieved_chunks"][:4]:
+                    st.write(f"- {chunk['text'][:220]} ...")
+                    st.caption(f"chunk {chunk['chunk_id']} · page {chunk['page']} · combined score {chunk['combined_score']:.3f}")
 
 
 if __name__ == "__main__":

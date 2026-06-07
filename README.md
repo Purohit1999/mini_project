@@ -99,12 +99,18 @@ python main.py
 streamlit run streamlit_app.py
 ```
 
-The Streamlit page uses the same planner logic and defaults to offline mode for a safe demo.
+The Streamlit page uses the same planner logic and defaults to offline mode for a safe demo. It also includes an Expedia FAQ search section that uses hybrid retrieval over `data/E_FAQs.pdf`.
 
 Print the complete manager-worker trace:
 
 ```bash
 python main.py --show-trace
+```
+
+Ask the Expedia FAQ PDF directly:
+
+```bash
+python main.py --faq "What is Expedia's cancellation policy?"
 ```
 
 Use the Singapore demo request:
